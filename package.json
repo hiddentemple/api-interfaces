@@ -1,0 +1,15 @@
+{
+  "name": "api-interfaces",
+  "version": "1.0.0",
+  "description": "A package to that holds models and interfaces for our CRM API and UI",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [ "dist"],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "keywords": ["models", "contracts", "CRM", "interfaces"],
+  "author": "Lord_Puff",
+  "license": "UNLICENSED"
+}
