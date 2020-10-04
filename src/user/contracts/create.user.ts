@@ -1,6 +1,5 @@
-import {ContactModel} from "../../contact/models/contact.model";
-import {UserTypeModel} from "../models/user-type.model";
-
+import {ContactModel} from '../../contact/models/contact.model';
+import {UserTypeModel} from '../models/user-type.model'
 
 export class CreateUserRequest {
     email: string;
@@ -11,6 +10,5 @@ export class CreateUserRequest {
 }
 
 export class CreateUserResponse {
-    message: string
     id: string;
 }
