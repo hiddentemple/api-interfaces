@@ -12,5 +12,7 @@
   "keywords": ["models", "contracts", "CRM", "interfaces"],
   "author": "Lord_Puff",
   "license": "UNLICENSED"
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  "publishConfig": { 
+     "registry": "https://npm.pkg.github.com/" 
+  }
 }
