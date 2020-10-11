@@ -1,11 +1,12 @@
 import {ContactModel} from '../models/contact.model';
+import {CreateContactRequest, CreateContactResponse} from "./create.contact";
 
 
 export interface CreateBulkContactRequest {
-  contacts: ContactModel[];
+  contacts: CreateContactRequest[];
 }
 
 
 export interface CreateBulkContactResponse {
-  idArray: string[];
+  contacts: CreateContactResponse[];
 }

@@ -1,5 +1,7 @@
 import {ContactModel} from "../models/contact.model";
 
-export interface FindAllContactResponse {
+export type GetAllContactRequest = {}
+
+export interface GetAllContactResponse {
     contacts: ContactModel[];
 }

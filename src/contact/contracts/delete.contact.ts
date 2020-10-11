@@ -4,6 +4,4 @@ export interface DeleteContactRequest {
     id: string;
 }
 
-export interface DeleteContactResponse {
-
-}
+export type DeleteContactResponse = {};

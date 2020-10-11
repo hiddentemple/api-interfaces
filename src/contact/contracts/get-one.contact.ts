@@ -1,10 +1,10 @@
 import {ContactModel} from '../models/contact.model';
 
 
-export interface FindOneContactRequest {
+export interface GetOneContactRequest {
     id: string;
 }
 
-export interface FindOneContactResponse {
+export interface GetOneContactResponse {
   contact: ContactModel;
 }

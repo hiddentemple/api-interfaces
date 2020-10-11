@@ -3,21 +3,8 @@ import { PhoneModel } from '../models/phone.model';
 import { ContactModel } from '../models/contact.model';
 
 
-export interface CreateContactRequest {
-
-  // Properties
-  firstName: string;
-  lastName: string;
-  company?: string;
-  notes?: string;
-
-  // Relations
-  emails?: EmailModel[];
-  phones?: PhoneModel[];
-
-}
+export type CreateContactRequest = Omit<ContactModel, "id">;
 
 export interface CreateContactResponse {
-
   contact: ContactModel
 }
