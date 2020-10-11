@@ -19,11 +19,9 @@ export function getPrimary<T extends CategoryModel>(models: T[]): T | undefined 
     return models.find(isPrimary);
 }
 
-export function containsExactlyOnePrimary<T extends CategoryModel>(models: T[]): boolean | { error: string } {
+export function containsExactlyOnePrimary<T extends CategoryModel>(models: T[]): boolean {
     const filtered: T[] = models.filter(isPrimary)
-    if (filtered.length == 1) { return true; }
-    else if (filtered.length <= 0 ) { return { error: "Does not contain any primary categories" }}
-    else { return { error: "Contains more than one primary category" } }
+    return filtered.length == 1
 }
 
 export function uniqueDescriptionReducer<T extends CategoryModel>(acc: string[], current: T)  {

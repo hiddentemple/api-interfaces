@@ -4,7 +4,7 @@ import {CategoryModel} from "../../core";
 
 export interface PhoneModel {
     id: string;
-    number: number;
+    phoneNumber: string;
     category: CategoryModel;
     contact?: ContactModel;
 }
