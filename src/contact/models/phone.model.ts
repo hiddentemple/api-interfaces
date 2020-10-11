@@ -1,8 +1,8 @@
 import {ContactModel} from "./contact.model";
-import {CategoryModel} from "../../core";
+import {CategoryModel, HasCategory} from "../../core";
 
 
-export interface PhoneModel {
+export interface PhoneModel extends HasCategory {
     id: string;
     phoneNumber: string;
     category: CategoryModel;

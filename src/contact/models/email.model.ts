@@ -1,8 +1,8 @@
 import {ContactModel} from "./contact.model";
-import {CategoryModel} from "../../core/category.model";
+import {CategoryModel, HasCategory} from "../../core/category.model";
 
 
-export class EmailModel {
+export interface EmailModel extends HasCategory{
     id: string;
     address: string;
     category: CategoryModel;

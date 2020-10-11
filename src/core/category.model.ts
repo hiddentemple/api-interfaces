@@ -11,6 +11,10 @@ export interface CategoryModel {
     code: CategoryCode, description: string
 }
 
+export interface HasCategory {
+    category: CategoryModel;
+}
+
 export function isPrimary<T extends CategoryModel>(model: T): boolean {
     return model.code === CategoryCode.PRIMARY.valueOf();
 }
