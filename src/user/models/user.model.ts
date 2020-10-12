@@ -1,5 +1,5 @@
 import {UserTypeModel} from "./user-type.model";
-import {ContactModel} from "../../contact/models/contact.model";
+import {ContactModel} from "../../contact";
 
 
 export interface UserModel {
