@@ -9,8 +9,8 @@ export interface ContactModel {
     lastName: string;
     updatedAt: Date;
     createdAt: Date;
-    company?: string;
-    notes?: string;
+    company: string;
+    notes: string;
 
     emails?: EmailModel[];
     phones?: PhoneModel[];

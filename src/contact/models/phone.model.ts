@@ -5,6 +5,5 @@ import {CategoryModel, HasCategory} from "../../core";
 export interface PhoneModel extends HasCategory {
     id: string;
     phoneNumber: string;
-    category: CategoryModel;
     contact?: ContactModel;
 }

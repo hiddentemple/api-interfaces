@@ -1,22 +1,17 @@
 export enum CategoryCode { PRIMARY="PRMY", USER = "USER" }
 
-export const CategoryCodeStrings = { literals: [CategoryCode.USER.valueOf(), CategoryCode.PRIMARY.valueOf()] }
-
-export interface CategoryDTO {
-    code: string;
-    description: string;
-}
-
 export interface CategoryModel {
-    code: CategoryCode, description: string
+    id: string,
+    code: CategoryCode,
+    description: string
 }
 
 export interface HasCategory {
     category: CategoryModel;
 }
 
-export function isPrimary<T extends CategoryModel>(model: T): boolean {
-    return model.code === CategoryCode.PRIMARY.valueOf();
+export function isPrimary<T extends Pick<CategoryModel, 'code'>>({code}: T): boolean {
+    return code === CategoryCode.PRIMARY.valueOf();
 }
 
 export function getPrimary<T extends CategoryModel>(models: T[]): T | undefined {
