@@ -1,39 +1,36 @@
-export enum CategoryCode { PRIMARY="PRMY", USER = "USER" }
+export enum CategoryCode { PRIMARY="PRMY", USER = "USER" } // eventually: default
 
 export interface CategoryModel {
-    id: string,
-    code: CategoryCode,
-    description: string
+    id: string;
+    code: CategoryCode;
+    description: string;
 }
 
-export interface HasCategory {
+export interface Categorized {
     category: CategoryModel;
 }
 
-export function isPrimary<T extends Pick<CategoryModel, 'code'>>({code}: T): boolean {
+export function isPrimary({code}: CategoryModel): boolean {
     return code === CategoryCode.PRIMARY.valueOf();
 }
 
-export function getPrimary<T extends CategoryModel>(models: T[]): T | undefined {
+export function getPrimary(models: CategoryModel[]): CategoryModel | undefined {
     return models.find(isPrimary);
 }
 
-export function containsExactlyOnePrimary<T extends CategoryModel>(models: T[]): boolean {
-    const filtered: T[] = models.filter(isPrimary)
-    return filtered.length == 1
+export function containsExactlyOnePrimary(models: CategoryModel[]): boolean {
+    const filtered: CategoryModel[] = models.filter(isPrimary);
+    return filtered.length == 1;
 }
 
-export function uniqueDescriptionReducer<T extends CategoryModel>(acc: string[], current: T)  {
+export function uniqueDescriptionReducer(acc: string[], current: CategoryModel)  {
     const desc: string = current.description;
     if (desc !== "" && !acc.includes(desc)) { acc.push(desc); }
     return acc;
 }
 
-export function getUniqueDescriptions<T extends CategoryModel>(models: T[]): string[] {
+export function getUniqueDescriptions(models: CategoryModel[]): string[] {
     const accumulator: string[] = [];
     return models.reduce(uniqueDescriptionReducer, accumulator);
 }
 
-export function hasPrimary<T extends CategoryModel>(models: T[]): boolean {
-    return models.some(isPrimary);
-}

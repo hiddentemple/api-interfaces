@@ -1,17 +1,15 @@
-import {EmailModel} from './email.model';
-import {PhoneModel} from './phone.model';
+import {PhoneModel} from "./phone.model";
+import {EmailModel} from "./email.model";
 
 export interface ContactModel {
-
     id: string;
-
     firstName: string;
     lastName: string;
     updatedAt: Date;
     createdAt: Date;
-    company: string;
-    notes: string;
+    company?: string;
+    notes?: string;
 
-    emails?: EmailModel[];
     phones?: PhoneModel[];
+    emails?: EmailModel[];
 }

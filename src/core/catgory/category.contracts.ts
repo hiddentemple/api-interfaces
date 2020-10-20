@@ -1,33 +1,33 @@
 import {CategoryCode, CategoryModel} from "./category.model";
-import {IsDefined, Length} from "class-validator";
+import {IsDefined, IsUUID, Length, MaxLength, ValidateNested} from "class-validator";
+import {Type} from "class-transformer";
 
 export class AbstractCategoryRequest {
     @IsDefined()
+    @ValidateNested()
+    @Type(() => AbstractInnerCategoryRequest)
     category: AbstractInnerCategoryRequest;
 }
 
 export class AbstractInnerCategoryRequest {
     @IsDefined()
-    code: CategoryCode;
-
-    @IsDefined()
-    @Length(4, 25)
+    @Length(3, 25)
     description: string;
 }
 
 export class AbstractCategoryResponse {
-    category: CategoryModel
+    category: CategoryModel;
 }
 
 export class CreateCategoryRequest extends AbstractCategoryRequest {}
-export class CreateCategoryResponse extends AbstractCategoryResponse {}
+export class CreateCategoryResponse extends AbstractCategoryResponse {
+    /**
+     * true: created a new item
+     * false: tried to create item that already existed, returned previous
+     */
+    wasCreated: boolean;
+}
 
 export class GetCategoryResponse extends AbstractCategoryResponse {}
 export class GetPrimaryCategoryResponse extends AbstractCategoryResponse {}
 export class GetAllCategoriesResponse { categories: CategoryModel[] }
-
-export class UpdateCategoryRequest {
-    @IsDefined()
-    description: string
-}
-export class UpdateCategoryResponse extends AbstractCategoryResponse {}

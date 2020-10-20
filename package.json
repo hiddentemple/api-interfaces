@@ -1,6 +1,6 @@
 {
   "name": "@hiddentemple/api-interfaces",
-  "version": "1.0.29",
+  "version": "1.1.0",
   "description": "A package to that holds models and interfaces for our CRM API and UI",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,9 +8,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "rm -fr ./dist; tsc",
     "prepare": "npm run build",
-    "generate-barrels": "barrelsby --delete"
+    "test": "jest"
   },
   "keywords": [
     "models",
@@ -25,9 +25,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
+    "class-transformer": "^0.3.1",
     "class-validator": "^0.12.2"
-  },
-  "devDependencies": {
-    "barrelsby": "^2.2.0"
   }
 }
