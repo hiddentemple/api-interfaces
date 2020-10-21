@@ -1,17 +1,4 @@
-export * from "./contact/contracts/create.bulkContacts"
-export * from "./contact/contracts/create.contact"
-export * from "./contact/contracts/delete.contact"
-export * from "./contact/contracts/find-all.contact"
-export * from "./contact/contracts/find-one.contact"
-export * from "./contact/contracts/update.contact"
-export * from "./contact/models/contact.model"
-export * from "./contact/models/email.model"
-export * from "./contact/models/phone.model"
-export * from "./user/contracts/create.user"
-// export * from "./user/contracts/delete.user"
-// export * from "./user/contracts/find-all.user"
-// export * from "./user/contracts/find-one.user"
-// export * from "./user/contracts/update.user"
-export * from "./user/models/user.model"
-export * from "./user/models/user-type.model"
-export * from "./api.contract"
+
+export * from './contact'
+export * from './core'
+export * from './user'
