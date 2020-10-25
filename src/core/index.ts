@@ -1,2 +1,2 @@
-export * from './catgory/category.model'
-export * from './catgory/category.contracts'
+export * from './category/category.model'
+export * from './category/category.contracts'
