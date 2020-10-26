@@ -1,7 +1,7 @@
 import {ContactModel} from "./contact.model";
-import {CategoryModel, Categorized} from "../core";
+import {CategorizedDTO, CategorizedModel} from "../core";
 
-export interface PhoneModel extends Categorized {
+export interface PhoneModel extends CategorizedModel {
     id: string;
     phoneNumber: string;
 }
