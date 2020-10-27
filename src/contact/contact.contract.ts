@@ -32,6 +32,22 @@ export class AbstractInnerContactRequest {
     notes?: string
 
     @IsOptional()
+    @Length(2, 50)
+    jobTitle?: string;
+
+    @IsOptional()
+    @Length(2, 50)
+    department?: string;
+
+    @IsOptional()
+    @Length(2, 50)
+    organization?: string;
+
+    @IsOptional()
+    @Length(2, 50)
+    gender?: string;
+
+    @IsOptional()
     @ValidateNested({each: true})
     @Type(() => EmailDTO)
     emails: EmailDTO[];

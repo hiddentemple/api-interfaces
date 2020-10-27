@@ -9,6 +9,10 @@ export interface ContactModel {
     createdAt: Date;
     company?: string;
     notes?: string;
+    jobTitle?: string;
+    department?: string;
+    organization?: string;
+    gender?: string;
 
     phones?: PhoneModel[];
     emails?: EmailModel[];
