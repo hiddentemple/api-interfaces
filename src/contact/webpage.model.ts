@@ -1,7 +1,7 @@
 export enum urlType {
-    PERSONAL = 'personal',
-    BUSINESS = 'business',
-    COMMERCE = 'commerce'
+    PERSONAL = 'Personal',
+    BUSINESS = 'Business',
+    COMMERCE = 'Commerce'
 }
 
 export interface WebpageModel{

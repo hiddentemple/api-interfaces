@@ -89,6 +89,9 @@ export class AbstractInnerContactRequest {
     @Type(() => WebpageDTO)
     webpages?: WebpageDTO[];
 
+    @IsOptional()
+    tags?: string[];
+
 }
 
 class AbstractContactResponse {
