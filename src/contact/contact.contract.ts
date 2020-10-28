@@ -83,6 +83,7 @@ export class AbstractInnerContactRequest {
     gender?: string;
 
     @IsOptional()
+    @ValidateNested({each: true})
     @Type(() => WebpageDTO)
     webpages?: WebpageDTO[];
 
