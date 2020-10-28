@@ -1,6 +1,7 @@
 import {IsDefined, IsEnum} from "class-validator";
 
 export enum PhoneEmailCategory {
+    PRIMARY = "Primary",
     PERSONAL = "Personal",
     WORK = "Work",
     FAX = "Fax",
