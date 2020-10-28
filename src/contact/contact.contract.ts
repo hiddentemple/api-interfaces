@@ -50,12 +50,12 @@ export class AbstractInnerContactRequest {
     @IsOptional()
     @ValidateNested({each: true})
     @Type(() => EmailDTO)
-    emails: EmailDTO[];
+    emails?: EmailDTO[];
 
     @IsOptional()
     @ValidateNested({each: true})
     @Type(() => PhoneDTO)
-    phones: PhoneDTO[];
+    phones?: PhoneDTO[];
 }
 
 class AbstractContactResponse {

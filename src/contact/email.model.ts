@@ -1,8 +1,8 @@
 import {ContactModel} from "./contact.model";
-import {CategoryModel, Categorized} from "../core";
+import {CategorizedModel} from "../core";
 
 
-export interface EmailModel extends Categorized {
+export interface EmailModel extends CategorizedModel {
     id: string;
     address: string;
 }

@@ -1,13 +1,9 @@
 import {IsDefined, IsEmail, IsOptional, IsUUID, ValidateNested} from "class-validator";
-import {AbstractInnerCategoryRequest} from "../core";
+import {CategorizedDTO} from "../core";
 import {EmailModel} from "./email.model";
 
-export class EmailDTO {
+export class EmailDTO extends CategorizedDTO {
     @IsDefined()
     @IsEmail()
     address: string
-
-    @IsDefined()
-    @IsUUID()
-    categoryId: string;
 }
