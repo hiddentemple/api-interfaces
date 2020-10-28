@@ -1,11 +1,4 @@
-import {
-    IsAlpha,
-    IsDefined,
-    IsOptional,
-    Length,
-    Matches,
-    ValidateNested
-} from "class-validator";
+import {IsAlpha, IsDefined, IsOptional, Length, Matches, Validate, ValidateNested} from "class-validator";
 import {Type} from "class-transformer";
 import {ContactModel} from "./contact.model";
 import {EmailDTO} from "./email.dto";
@@ -72,6 +65,10 @@ export class AbstractInnerContactRequest {
     @IsOptional()
     @Length(2, 50)
     company?: string
+
+    @IsOptional()
+    @Length(2, 50)
+    organization?: string;
 
     @IsOptional()
     notes?: string;

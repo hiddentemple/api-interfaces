@@ -4,7 +4,6 @@ import {AddressModel} from "./address.model";
 import {WebpageModel} from "./webpage.model";
 
 export interface ContactModel {
-
     id: string;
     firstName: string;
     lastName: string;
@@ -17,6 +16,7 @@ export interface ContactModel {
     jobTitle?: string;
     department?: string;
     company?: string;
+    organization?: string;
     notes?: string;
     birthday?: string;
     anniversary?: string;
@@ -25,5 +25,4 @@ export interface ContactModel {
     tags?: string[];
     updatedAt: Date;
     createdAt: Date;
-
 }
