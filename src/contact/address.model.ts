@@ -1,9 +1,8 @@
-export enum addressEnum {
-    HOME = "Home",
-    BUSINESS = "Business"
+export enum AddressType {
+    HOME = 'Home',
+    BUSINESS = 'Business',
+    OTHER = 'Other'
 }
-
-type enumKeys = keyof typeof addressEnum
 
 export interface AddressModel{
     street: string;
@@ -12,5 +11,5 @@ export interface AddressModel{
     state: string;
     postalCode: string;
     country?: string;
-    [type: number]: string;
+    type: AddressType;
 }

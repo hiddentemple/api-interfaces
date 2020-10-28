@@ -1,4 +1,5 @@
-import {IsAlpha, IsDefined, IsNumber, IsNumberString, IsOptional, Length} from "class-validator";
+import {IsAlpha, IsDefined, IsEnum, IsNumberString, IsOptional, Length} from "class-validator";
+import {AddressType} from "./address.model";
 
 export class AddressDTO {
 
@@ -8,7 +9,7 @@ export class AddressDTO {
 
     @IsOptional()
     @Length(2, 50)
-    street2: string
+    street2?: string
 
     @IsDefined()
     @Length(2, 25)
@@ -28,5 +29,9 @@ export class AddressDTO {
     @IsOptional()
     @Length(2, 50)
     @IsAlpha()
-    country: string;
+    country?: string;
+
+    @IsDefined()
+    @IsEnum(AddressType)
+    type: AddressType;
 }
