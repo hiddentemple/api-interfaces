@@ -4,6 +4,6 @@ import {Type} from "class-transformer";
 
 export class PhoneDTO extends CategorizedDTO {
     @IsDefined()
-    @Matches(/^\+\d{5,15}$/)
+    @Matches(/^\+\d{5,15}$/, {message: "phone number needs to be in international format"})
     phoneNumber: string
 }
