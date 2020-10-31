@@ -1,10 +1,12 @@
-import {IsDefined, IsOptional, Length, Matches, Validate, ValidateNested} from "class-validator";
+import {IsAlpha, IsDefined, IsOptional, Length, Matches, Validate, ValidateNested} from "class-validator";
 import {Type} from "class-transformer";
 import {ContactModel} from "./contact.model";
 import {EmailDTO} from "./email.dto";
 import {PhoneDTO} from "./phone.dto";
+import {AddressDTO} from "./address.dto";
+import {WebpageDTO} from "./webpage.dto";
 
-export const NameRegex = /^[a-zA-z-\.]+$/
+export const NameRegex = /^[a-zA-z-.']+$/
 
 export class AbstractContactRequest {
     @IsDefined()
@@ -26,10 +28,31 @@ export class AbstractInnerContactRequest {
 
     @IsOptional()
     @Length(2, 50)
-    company?: string
+    nickName?: string;
 
     @IsOptional()
-    notes?: string
+    @ValidateNested({each: true})
+    @Type(() => EmailDTO)
+    emails?: EmailDTO[];
+
+    @IsOptional()
+    @ValidateNested({each: true})
+    @Type(() => PhoneDTO)
+    phones?: PhoneDTO[];
+
+    @IsOptional()
+    @ValidateNested({each: true})
+    @Type( () => AddressDTO)
+    addresses?: AddressDTO[];
+
+    @IsOptional()
+    @Length(2, 5)
+    @IsAlpha()
+    countryCode?: string;
+
+    @IsOptional()
+    @Length(2, 50)
+    relatedName?: string;
 
     @IsOptional()
     @Length(2, 50)
@@ -41,21 +64,32 @@ export class AbstractInnerContactRequest {
 
     @IsOptional()
     @Length(2, 50)
-    organization?: string;
+    company?: string
 
     @IsOptional()
     @Length(2, 50)
+    organization?: string;
+
+    @IsOptional()
+    notes?: string;
+
+    @IsOptional()
+    birthday?: string;
+
+    @IsOptional()
+    anniversary?: string;
+
+    @IsOptional()
     gender?: string;
 
     @IsOptional()
     @ValidateNested({each: true})
-    @Type(() => EmailDTO)
-    emails?: EmailDTO[];
+    @Type(() => WebpageDTO)
+    webpages?: WebpageDTO[];
 
     @IsOptional()
-    @ValidateNested({each: true})
-    @Type(() => PhoneDTO)
-    phones?: PhoneDTO[];
+    tags?: string[];
+
 }
 
 class AbstractContactResponse {
