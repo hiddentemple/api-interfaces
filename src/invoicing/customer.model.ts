@@ -5,7 +5,9 @@ export interface CustomerModel {
     name: string;
     attn?: string;
     address?: AddressModel;
-    phones?: PhoneModel[];
+    mobilePhone?: PhoneModel;
+    businessPhone?: PhoneModel;
+    fax?: PhoneModel;
     email?: EmailModel;
     webpage?: WebpageModel;
     salesTech?: string;

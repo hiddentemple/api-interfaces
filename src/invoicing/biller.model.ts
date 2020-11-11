@@ -5,7 +5,9 @@ export interface BillerModel {
     id: string;
     name: string;
     address: AddressModel;
-    phones?: PhoneModel[];
+    mobilePhone?: PhoneModel;
+    businessPhone?: PhoneModel;
+    fax?: PhoneModel;
     email?: EmailModel;
     paymentInfo?: PaymentModel;
     invoiceFooter?: string;
