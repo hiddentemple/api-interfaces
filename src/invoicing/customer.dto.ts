@@ -1,7 +1,6 @@
 import {
     AddressDTO,
     AddressModel,
-    ContactModel,
     EmailDTO,
     EmailModel,
     PhoneDTO,

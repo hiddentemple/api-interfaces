@@ -1,6 +1,6 @@
 import {AddressDTO, AddressModel, EmailDTO, EmailModel, PhoneDTO, PhoneModel} from "../contact";
 import {PaymentModel} from "./payment.model";
-import {IsBoolean, IsDefined, IsEmail, IsOptional, Length, ValidateNested} from "class-validator";
+import {IsBoolean, IsDefined, IsOptional, Length, ValidateNested} from "class-validator";
 import {Type} from "class-transformer";
 import {PaymentDTO} from "./payment.dto";
 

@@ -3,7 +3,6 @@ import {InvoiceModel} from "./invoice.model";
 import {PaymentModel} from "./payment.model";
 import {IsAlphanumeric, IsDefined, IsOptional, Length, ValidateNested} from "class-validator";
 import {Type} from "class-transformer";
-import {InvoiceDTO} from "../../dist/invoicing/invoice.dto";
 import {PaymentDTO} from "./payment.dto";
 import {AccountModel} from "./account.model";
 import {CustomerDTO} from "./customer.dto";
@@ -27,7 +26,6 @@ export class AbstractInnerAccountRequest {
 
     @IsOptional()
     @ValidateNested({each: true})
-    @Type(() => InvoiceDTO)
     invoices?: InvoiceModel[];
 
     @IsOptional()
