@@ -4,7 +4,7 @@ import {PaymentModel} from "./payment.model";
 
 export interface AccountModel {
     id: string;
-    acctNumber?: number; 
+    acctNumber?: string; 
     customer: CustomerModel;
     invoices: InvoiceModel[];
     paymentInfo?: PaymentModel;
