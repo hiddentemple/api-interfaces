@@ -4,7 +4,7 @@ import {BillerModel} from "./biller.model";
 
 export interface InvoiceModel {
     id: string;
-    date: Date;
+    date: string;
     biller: BillerModel;
     invoiceNumber: string;
     technician?: string;
