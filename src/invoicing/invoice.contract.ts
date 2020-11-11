@@ -1,7 +1,17 @@
 import {BillerModel} from "./biller.model";
 import {CustomerModel} from "./customer.model";
 import {LineItemModel} from "./line-item.model";
-import {IsBoolean, IsDate, IsDecimal, IsDefined, IsNumber, IsOptional, Length, ValidateNested} from "class-validator";
+import {
+    IsBoolean,
+    IsDate,
+    IsDateString,
+    IsDecimal,
+    IsDefined,
+    IsNumber,
+    IsOptional,
+    Length,
+    ValidateNested
+} from "class-validator";
 import {Type} from "class-transformer";
 import {LineItemDTO} from "./line-item.dto";
 import {CustomerDTO} from "./customer.dto";
@@ -19,7 +29,7 @@ export class AbstractInvoiceRequest {
 export class AbstractInnerInvoiceRequest {
 
     @IsDefined()
-    @IsDate()
+    @IsDateString()
     date: string;
 
     @IsDefined()
@@ -50,11 +60,11 @@ export class AbstractInnerInvoiceRequest {
     lineItems: LineItemModel[];
 
     @IsOptional()
-    @Length(2, 50)
+    @IsNumber()
     subTotal?: number;
 
     @IsOptional()
-    @IsDecimal()
+    @IsNumber()
     tax?: number;
 
     @IsOptional()
