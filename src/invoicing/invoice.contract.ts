@@ -80,7 +80,7 @@ class AbstractInvoiceResponse {
 }
 
 export class GetInvoiceResponse extends AbstractInvoiceResponse {}
-export class GetAllContactsResponse { invoices: InvoiceModel[]; }
+export class GetAllInvoicesResponse { invoices: InvoiceModel[]; }
 
 export class CreateInvoiceRequest extends AbstractInvoiceRequest {}
 export class CreateInvoiceResponse extends AbstractInvoiceResponse {}
