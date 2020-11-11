@@ -1,4 +1,4 @@
-import {IsDefined, IsOptional, Length} from "class-validator";
+import {IsDefined, IsNumber, IsOptional, Length} from "class-validator";
 
 export class LineItemDTO {
 
@@ -7,7 +7,7 @@ export class LineItemDTO {
     name: string;
 
     @IsDefined()
-    @Length(2, 50)
+    @IsNumber()
     quantity: number;
 
     @IsDefined()
@@ -19,11 +19,11 @@ export class LineItemDTO {
     description?: string;
 
     @IsDefined()
-    @Length(2, 50)
+    @IsNumber()
     unitPrice: number;
 
     @IsDefined()
-    @Length(2, 50)
+    @IsNumber()
     totalPrice: number;
 
     @IsOptional()

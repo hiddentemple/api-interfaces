@@ -5,6 +5,7 @@ import {BillerModel} from "./biller.model";
 
 export interface AccountModel {
     id: string;
+    acctNumber?: number; 
     customer: CustomerModel;
     invoices: InvoiceModel[];
     paymentInfo?: PaymentModel;

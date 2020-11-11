@@ -1,5 +1,16 @@
-import {AddressModel, ContactModel, EmailModel, PhoneModel, WebpageModel} from "../contact";
-import {IsDefined, IsOptional, Length} from "class-validator";
+import {
+    AddressDTO,
+    AddressModel,
+    ContactModel,
+    EmailDTO,
+    EmailModel,
+    PhoneDTO,
+    PhoneModel,
+    WebpageDTO,
+    WebpageModel
+} from "../contact";
+import {IsBoolean, IsDefined, IsOptional, Length, ValidateNested} from "class-validator";
+import {Type} from "class-transformer";
 
 export class CustomerDTO {
     @IsDefined()
@@ -8,22 +19,36 @@ export class CustomerDTO {
 
     @IsOptional()
     @Length(2, 50)
-    attn?: string | ContactModel;
+    attn?: string
 
     @IsOptional()
-    @Length(2, 50)
+    @ValidateNested()
+    @Type(() => AddressDTO)
     address?: AddressModel;
 
     @IsOptional()
-    @Length(2, 50)
-    phones?: PhoneModel[];
+    @ValidateNested()
+    @Type(() => PhoneDTO)
+    mobilePhone?: PhoneModel;
 
     @IsOptional()
-    @Length(2, 50)
+    @ValidateNested()
+    @Type(() => PhoneDTO)
+    businessPhone?: PhoneModel;
+
+    @IsOptional()
+    @ValidateNested()
+    @Type(() => PhoneDTO)
+    fax?: PhoneModel;
+
+    @IsOptional()
+    @ValidateNested()
+    @Type(() => EmailDTO)
     email?: EmailModel;
 
     @IsOptional()
-    @Length(2, 50)
+    @ValidateNested()
+    @Type(() => WebpageDTO)
     webpage?: WebpageModel;
 
     @IsOptional()
@@ -31,18 +56,10 @@ export class CustomerDTO {
     salesTech?: string;
 
     @IsOptional()
-    @Length(2, 50)
+    @Length(2, 255)
     notes?: string;
 
     @IsOptional()
-    @Length(2, 50)
+    @IsBoolean()
     active?: boolean;
-
-    @IsOptional()
-    @Length(2, 50)
-    createdAt?: Date;
-
-    @IsOptional()
-    @Length(2, 50)
-    updatedAt?: Date;
 }

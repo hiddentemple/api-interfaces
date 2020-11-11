@@ -1,6 +1,8 @@
-import {AddressModel, EmailModel, PhoneModel} from "../contact";
+import {AddressDTO, AddressModel, EmailDTO, EmailModel, PhoneDTO, PhoneModel} from "../contact";
 import {PaymentModel} from "./payment.model";
-import {IsBoolean, IsDefined, IsOptional, Length} from "class-validator";
+import {IsBoolean, IsDefined, IsEmail, IsOptional, Length, ValidateNested} from "class-validator";
+import {Type} from "class-transformer";
+import {PaymentDTO} from "./payment.dto";
 
 export class BillerDTO {
     @IsDefined()
@@ -8,19 +10,33 @@ export class BillerDTO {
     name: string;
 
     @IsOptional()
-    @Length(2, 50)
+    @ValidateNested()
+    @Type(() => AddressDTO)
     address?: AddressModel;
     
     @IsOptional()
-    @Length(2, 50)
-    phones?: PhoneModel[];
+    @ValidateNested()
+    @Type(() => PhoneDTO)
+    mobilePhone?: PhoneModel;
 
     @IsOptional()
-    @Length(2, 50)
+    @ValidateNested()
+    @Type(() => PhoneDTO)
+    businessPhone?: PhoneModel;
+
+    @IsOptional()
+    @ValidateNested()
+    @Type(() => PhoneDTO)
+    fax?: PhoneModel;
+    
+    @IsOptional()
+    @ValidateNested()
+    @Type(() => EmailDTO)
     email?: EmailModel;
 
     @IsOptional()
-    @Length(2, 50)
+    @ValidateNested()
+    @Type(() => PaymentDTO)
     paymentInfo?: PaymentModel;
 
     @IsOptional()
@@ -35,12 +51,4 @@ export class BillerDTO {
     @IsBoolean()
     @Length(2, 50)
     active?: boolean;
-
-    @IsOptional()
-    @Length(2, 50)
-    createdAt?: Date;
-
-    @IsOptional()
-    @Length(2, 50)
-    updatedAt?: Date;
 }
