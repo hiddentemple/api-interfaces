@@ -49,6 +49,5 @@ export class BillerDTO {
 
     @IsOptional()
     @IsBoolean()
-    @Length(2, 50)
     active?: boolean;
 }
