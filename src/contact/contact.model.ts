@@ -11,8 +11,6 @@ export interface ContactModel {
     emails?: EmailModel[];
     phones?: PhoneModel[];
     addresses?: AddressModel[];
-    countryCode?: string;
-    relatedName?: string;
     jobTitle?: string;
     department?: string;
     company?: string;

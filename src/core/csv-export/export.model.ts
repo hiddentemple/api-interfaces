@@ -92,14 +92,6 @@ export const CSVExportModel = [
         value: 'businessCountry',
     },
     {
-        label: 'Country Code',
-        value: 'countryCode',
-    },
-    {
-        label: 'Related Name',
-        value: 'relatedName',
-    },
-    {
         label: 'Job Title',
         value: 'jobTitle',
     },

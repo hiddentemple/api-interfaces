@@ -10,8 +10,8 @@ import {CustomerDTO} from "./customer.dto";
 export class AbstractAccountRequest {
     @IsDefined()
     @ValidateNested()
-    @Type(() => AbstractAccountRequest)
-    account: AbstractAccountRequest;
+    @Type(() => AbstractInnerAccountRequest)
+    account: AbstractInnerAccountRequest;
 }
 
 export class AbstractInnerAccountRequest {

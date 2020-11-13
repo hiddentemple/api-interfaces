@@ -83,6 +83,11 @@ export class AbstractInnerInvoiceRequest {
     @IsBoolean()
     paidInFull?: boolean;
     
+    @IsOptional()
+    createdBy?: string;
+
+    @IsOptional()
+    updatedBy?: string;
 }
 
 class AbstractInvoiceResponse {
