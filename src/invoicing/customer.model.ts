@@ -5,11 +5,11 @@ export interface CustomerModel {
     name: string;
     attn?: string;
     address?: AddressModel;
-    mobilePhone?: PhoneModel;
-    businessPhone?: PhoneModel;
-    fax?: PhoneModel;
-    email?: EmailModel;
-    webpage?: WebpageModel;
+    mobilePhone?: string;
+    businessPhone?: string;
+    fax?: string;
+    email?: string;
+    webpage?: string;
     salesTech?: string;
     notes?: string;
     active?: boolean;

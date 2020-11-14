@@ -13,12 +13,10 @@ export class AddressDTO {
 
     @IsDefined()
     @Length(2, 25)
-    @IsAlpha()
     city: string;
 
     @IsDefined()
     @Length(2, 50)
-    @IsAlpha()
     state: string;
 
     @IsDefined()
@@ -28,7 +26,6 @@ export class AddressDTO {
 
     @IsOptional()
     @Length(2, 50)
-    @IsAlpha()
     country?: string;
 
     @IsDefined()

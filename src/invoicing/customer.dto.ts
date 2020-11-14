@@ -8,7 +8,7 @@ import {
     WebpageDTO,
     WebpageModel
 } from "../contact";
-import {IsBoolean, IsDefined, IsOptional, Length, ValidateNested} from "class-validator";
+import {IsBoolean, IsDefined, IsEmail, IsOptional, Length, Matches, ValidateNested} from "class-validator";
 import {Type} from "class-transformer";
 
 export class CustomerDTO {
@@ -26,29 +26,24 @@ export class CustomerDTO {
     address?: AddressModel;
 
     @IsOptional()
-    @ValidateNested()
-    @Type(() => PhoneDTO)
-    mobilePhone?: PhoneModel;
+    @Matches(/^\+\d{5,15}$/, {message: "phone number needs to be in international format"})
+    mobilePhone?: string;
 
     @IsOptional()
-    @ValidateNested()
-    @Type(() => PhoneDTO)
-    businessPhone?: PhoneModel;
+    @Matches(/^\+\d{5,15}$/, {message: "phone number needs to be in international format"})
+    businessPhone?: string;
 
     @IsOptional()
-    @ValidateNested()
-    @Type(() => PhoneDTO)
-    fax?: PhoneModel;
+    @Matches(/^\+\d{5,15}$/, {message: "phone number needs to be in international format"})
+    fax?: string;
 
     @IsOptional()
-    @ValidateNested()
-    @Type(() => EmailDTO)
-    email?: EmailModel;
+    @IsEmail()
+    email?: string;
 
-    @IsOptional()
-    @ValidateNested()
-    @Type(() => WebpageDTO)
-    webpage?: WebpageModel;
+    @IsDefined()
+    @Length(5, 50)
+    webpage?: string;
 
     @IsOptional()
     @Length(2, 50)

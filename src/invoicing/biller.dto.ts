@@ -1,6 +1,6 @@
 import {AddressDTO, AddressModel, EmailDTO, EmailModel, PhoneDTO, PhoneModel} from "../contact";
 import {PaymentModel} from "./payment.model";
-import {IsBoolean, IsDefined, IsOptional, Length, ValidateNested} from "class-validator";
+import {IsBoolean, IsDefined, IsEmail, IsOptional, Length, Matches, ValidateNested} from "class-validator";
 import {Type} from "class-transformer";
 import {PaymentDTO} from "./payment.dto";
 
@@ -13,26 +13,22 @@ export class BillerDTO {
     @ValidateNested()
     @Type(() => AddressDTO)
     address?: AddressModel;
-    
-    @IsOptional()
-    @ValidateNested()
-    @Type(() => PhoneDTO)
-    mobilePhone?: PhoneModel;
 
     @IsOptional()
-    @ValidateNested()
-    @Type(() => PhoneDTO)
-    businessPhone?: PhoneModel;
+    @Matches(/^\+\d{5,15}$/, {message: "phone number needs to be in international format"})
+    mobilePhone?: string;
 
     @IsOptional()
-    @ValidateNested()
-    @Type(() => PhoneDTO)
-    fax?: PhoneModel;
+    @Matches(/^\+\d{5,15}$/, {message: "phone number needs to be in international format"})
+    businessPhone?: string;
+
+    @IsOptional()
+    @Matches(/^\+\d{5,15}$/, {message: "phone number needs to be in international format"})
+    fax?: string;
     
     @IsOptional()
-    @ValidateNested()
-    @Type(() => EmailDTO)
-    email?: EmailModel;
+    @IsEmail()
+    email?: string;
 
     @IsOptional()
     @ValidateNested()

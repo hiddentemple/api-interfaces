@@ -5,10 +5,10 @@ export interface BillerModel {
     id: string;
     name: string;
     address: AddressModel;
-    mobilePhone?: PhoneModel;
-    businessPhone?: PhoneModel;
-    fax?: PhoneModel;
-    email?: EmailModel;
+    mobilePhone?: string;
+    businessPhone?: string;
+    fax?: string;
+    email?: string;
     paymentInfo?: PaymentModel;
     invoiceFooter?: string;
     notes?: string;
