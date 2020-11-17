@@ -13,11 +13,11 @@ import {Type} from "class-transformer";
 
 export class CustomerDTO {
     @IsDefined()
-    @Length(2, 50)
+    @Length(2, 255)
     name: string;
 
     @IsOptional()
-    @Length(2, 50)
+    @Length(2, 255)
     attn?: string
 
     @IsOptional()
@@ -42,11 +42,11 @@ export class CustomerDTO {
     email?: string;
 
     @IsOptional()
-    @Length(5, 50)
+    @Length(5, 255)
     webpage?: string;
 
     @IsOptional()
-    @Length(2, 50)
+    @Length(2, 255)
     salesTech?: string;
 
     @IsOptional()

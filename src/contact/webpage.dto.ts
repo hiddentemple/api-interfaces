@@ -3,7 +3,7 @@ import  {urlType} from "./webpage.model";
 
 export class WebpageDTO {
     @IsDefined()
-    @Length(5, 50)
+    @Length(5, 255)
     url: string
 
     @IsDefined()

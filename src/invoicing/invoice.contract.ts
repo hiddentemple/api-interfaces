@@ -38,11 +38,11 @@ export class AbstractInnerInvoiceRequest {
     biller: BillerModel;
 
     @IsDefined()
-    @Length(2, 50)
+    @Length(2, 255)
     invoiceNumber: string;
 
     @IsOptional()
-    @Length(2, 50)
+    @Length(2, 255)
     technician?: string;
 
     @IsDefined()
@@ -51,7 +51,7 @@ export class AbstractInnerInvoiceRequest {
     customer: CustomerModel;
 
     @IsOptional()
-    @Length(2, 50)
+    @Length(2, 255)
     notes?: string;
 
     @IsDefined()

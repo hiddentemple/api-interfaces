@@ -19,11 +19,6 @@ export class AbstractInnerAccountRequest {
     @IsAlphanumeric()
     acctNumber: string;
     
-    @IsDefined()
-    @ValidateNested()
-    @Type(() => CustomerDTO)
-    customer: CustomerModel;
-
     @IsOptional()
     @ValidateNested({each: true})
     invoices?: InvoiceModel[];
@@ -34,7 +29,7 @@ export class AbstractInnerAccountRequest {
     paymentInfo?: PaymentModel;
 
     @IsOptional()
-    @Length(2, 50)
+    @Length(2, 255)
     notes?: string;
 }
 

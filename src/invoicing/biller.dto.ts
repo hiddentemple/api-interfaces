@@ -6,7 +6,7 @@ import {PaymentDTO} from "./payment.dto";
 
 export class BillerDTO {
     @IsDefined()
-    @Length(2, 50)
+    @Length(2, 255)
     name: string;
 
     @IsOptional()
@@ -36,11 +36,11 @@ export class BillerDTO {
     paymentInfo?: PaymentModel;
 
     @IsOptional()
-    @Length(2, 50)
+    @Length(2, 255)
     invoiceFooter?: string;
 
     @IsOptional()
-    @Length(2, 50)
+    @Length(2, 255)
     notes?: string;
 
     @IsOptional()
