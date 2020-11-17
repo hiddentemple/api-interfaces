@@ -41,7 +41,7 @@ export class CustomerDTO {
     @IsEmail()
     email?: string;
 
-    @IsDefined()
+    @IsOptional()
     @Length(5, 50)
     webpage?: string;
 
