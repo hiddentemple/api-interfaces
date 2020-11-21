@@ -1,8 +1,15 @@
 import {ContactModel} from "./contact.model";
-import {CategorizedModel} from "../core";
+import {WithPrimaryModel} from "../core";
 
+export enum EmailCategory {
+    PRIMARY = "Primary",
+    PERSONAL = "Personal",
+    WORK = "Work",
+    OTHER = "Other"
+}
 
-export interface EmailModel extends CategorizedModel {
-    id: string;
+export interface EmailModel extends WithPrimaryModel {
+    id?: string;
     address: string;
+    category: EmailCategory;
 }

@@ -8,19 +8,19 @@ export interface ContactModel {
     firstName: string;
     lastName: string;
     nickName?: string;
-    emails?: EmailModel[];
-    phones?: PhoneModel[];
-    addresses?: AddressModel[];
-    countryCode?: string;
-    relatedName?: string;
+    anniversary?: string;
+    birthday?: string;
+    gender?: string;
+
     jobTitle?: string;
     department?: string;
     company?: string;
     organization?: string;
+
+    emails?: EmailModel[];
+    phones?: PhoneModel[];
+    addresses?: AddressModel[];
     notes?: string;
-    birthday?: string;
-    anniversary?: string;
-    gender?: string;
     webpages?: WebpageModel[];
     tags?: string[];
     updatedAt: Date;
