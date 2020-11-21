@@ -1,15 +1,15 @@
 import {ContactModel} from "./contact.model";
 import {WithPrimaryModel} from "../core";
+import {Categorized} from "../core/categorized";
 
 export enum PhoneCategory {
-    PRIMARY = "Primary",
     PERSONAL = "Personal",
     WORK = "Work",
     FAX = "Fax",
     OTHER = "Other"
 }
 
-export interface PhoneModel extends WithPrimaryModel {
+export interface PhoneModel extends WithPrimaryModel, Categorized {
     id?: string;
     phoneNumber: string;
     category: PhoneCategory;

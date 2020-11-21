@@ -1,8 +1,9 @@
 import {IsAlpha, IsBoolean, IsDefined, IsEnum, IsNumberString, IsOptional, Length} from "class-validator";
 import {AddressCategory, AddressModel} from "./address.model";
 import {WithPrimary} from "../core";
+import {Categorized} from "../core/categorized";
 
-export class AddressDTO extends WithPrimary implements AddressModel {
+export class AddressDTO implements AddressModel {
 
     @IsDefined()
     @Length(5, 255)

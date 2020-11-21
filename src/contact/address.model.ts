@@ -1,4 +1,5 @@
 import {WithPrimaryModel} from "../core";
+import {Categorized} from "../core/categorized";
 
 export enum AddressCategory {
     HOME = 'Home',
@@ -6,8 +7,9 @@ export enum AddressCategory {
     OTHER = 'Other'
 }
 
-export interface AddressModel extends WithPrimaryModel {
+export interface AddressModel extends Categorized {
     id?: string;
+
     street: string;
     street2?: string;
     city: string;

@@ -4,7 +4,8 @@ import {AddressModel} from "./address.model";
 import {WebpageModel} from "./webpage.model";
 
 export interface ContactModel {
-    id: string;
+    id?: string;
+
     firstName: string;
     lastName: string;
     nickName?: string;

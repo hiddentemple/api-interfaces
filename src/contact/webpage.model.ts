@@ -1,13 +1,14 @@
 import {WithPrimaryModel} from "../core";
+import {Categorized} from "../core/categorized";
 
-export enum URLCategory {
+export enum WebpageCategory {
     PERSONAL = 'Personal',
     BUSINESS = 'Business',
-    COMMERCE = 'Commerce'
+    OTHER = 'Other'
 }
 
-export interface WebpageModel extends WithPrimaryModel {
+export interface WebpageModel extends Categorized {
     id?: string;
     url: string;
-    category: URLCategory;
+    category: WebpageCategory;
 }
