@@ -17,17 +17,17 @@ export class AbstractContactRequest {
 
 export class AbstractInnerContactRequest {
     @Matches(NameRegex, {message: "firstName must contain only alphabetic characters and '-'"})
-    @Length(2, 50)
+    @Length(2, 255)
     @IsDefined()
     firstName: string;
 
     @Matches(NameRegex, {message: "lastName must contain only alphabetic characters and '-'"})
-    @Length(2, 50)
+    @Length(2, 255)
     @IsDefined()
     lastName: string;
 
     @IsOptional()
-    @Length(2, 50)
+    @Length(2, 255)
     nickName?: string;
 
     @IsOptional()
@@ -51,23 +51,23 @@ export class AbstractInnerContactRequest {
     countryCode?: string;
 
     @IsOptional()
-    @Length(2, 50)
+    @Length(2, 255)
     relatedName?: string;
 
     @IsOptional()
-    @Length(2, 50)
+    @Length(2, 255)
     jobTitle?: string;
 
     @IsOptional()
-    @Length(2, 50)
+    @Length(2, 255)
     department?: string;
 
     @IsOptional()
-    @Length(2, 50)
+    @Length(2, 255)
     company?: string
 
     @IsOptional()
-    @Length(2, 50)
+    @Length(2, 255)
     organization?: string;
 
     @IsOptional()
