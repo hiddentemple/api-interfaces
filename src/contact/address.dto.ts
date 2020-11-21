@@ -5,21 +5,19 @@ import {WithPrimary} from "../core";
 export class AddressDTO extends WithPrimary implements AddressModel {
 
     @IsDefined()
-    @Length(5, 50)
+    @Length(5, 255)
     street: string;
 
     @IsOptional()
-    @Length(2, 50)
+    @Length(2, 255)
     street2?: string
 
     @IsDefined()
     @Length(2, 25)
-    @IsAlpha()
     city: string;
 
     @IsDefined()
-    @Length(2, 50)
-    @IsAlpha()
+    @Length(2, 255)
     state: string;
 
     @IsDefined()
@@ -28,8 +26,7 @@ export class AddressDTO extends WithPrimary implements AddressModel {
     postalCode: string;
 
     @IsOptional()
-    @Length(2, 50)
-    @IsAlpha()
+    @Length(2, 255)
     country?: string;
 
     @IsDefined()

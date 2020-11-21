@@ -4,7 +4,7 @@ import {WithPrimary} from "../core";
 
 export class WebpageDTO extends WithPrimary implements WebpageModel {
     @IsDefined()
-    @Length(5, 50)
+    @Length(5, 255)
     url: string
 
     @IsDefined()

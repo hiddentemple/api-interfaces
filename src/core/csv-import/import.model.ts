@@ -23,8 +23,6 @@ export const CSVColumns=[
     'BusinessState',
     'BusinessPostalCode',
     'BusinessCountry',
-    'CountryCode',
-    'RelatedName',
     'JobTitle',
     'Department',
     'Organization',
