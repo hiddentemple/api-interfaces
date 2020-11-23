@@ -1,7 +1,7 @@
-import {IsAlpha, IsDefined, IsEnum, IsNumberString, IsOptional, Length} from "class-validator";
-import {AddressType} from "./address.model";
+import {IsDefined, IsEnum, IsNumberString, IsOptional, Length} from "class-validator";
+import {AddressCategory, AddressModel} from "./address.model";
 
-export class AddressDTO {
+export class AddressDTO implements AddressModel {
 
     @IsDefined()
     @Length(5, 255)
@@ -29,6 +29,6 @@ export class AddressDTO {
     country?: string;
 
     @IsDefined()
-    @IsEnum(AddressType)
-    type: AddressType;
+    @IsEnum(AddressCategory)
+    category: AddressCategory;
 }

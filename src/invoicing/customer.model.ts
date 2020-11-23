@@ -1,4 +1,4 @@
-import {AddressModel, EmailModel, PhoneModel, WebpageModel} from "../contact";
+import {AddressModel} from "../contact";
 
 export interface CustomerModel {
     id: string;

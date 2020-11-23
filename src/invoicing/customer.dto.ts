@@ -1,13 +1,4 @@
-import {
-    AddressDTO,
-    AddressModel,
-    EmailDTO,
-    EmailModel,
-    PhoneDTO,
-    PhoneModel,
-    WebpageDTO,
-    WebpageModel
-} from "../contact";
+import {AddressDTO, AddressModel} from "../contact";
 import {IsBoolean, IsDefined, IsEmail, IsOptional, Length, Matches, ValidateNested} from "class-validator";
 import {Type} from "class-transformer";
 

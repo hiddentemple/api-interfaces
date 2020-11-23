@@ -1,10 +1,13 @@
-export enum urlType {
+import {Categorized} from "../core/categorized";
+
+export enum WebpageCategory {
     PERSONAL = 'Personal',
     BUSINESS = 'Business',
-    COMMERCE = 'Commerce'
+    OTHER = 'Other'
 }
 
-export interface WebpageModel{
+export interface WebpageModel extends Categorized {
+    id?: string;
     url: string;
-    type: urlType;
+    category: WebpageCategory;
 }

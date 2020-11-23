@@ -1,13 +1,12 @@
 import {IsDefined, IsEnum, Length} from "class-validator";
-import  {urlType} from "./webpage.model";
+import {WebpageCategory, WebpageModel} from "./webpage.model";
 
-export class WebpageDTO {
+export class WebpageDTO implements WebpageModel {
     @IsDefined()
     @Length(5, 255)
     url: string
 
     @IsDefined()
-    @IsEnum(urlType)
-    type: urlType;
-
+    @IsEnum(WebpageCategory)
+    category: WebpageCategory;
 }

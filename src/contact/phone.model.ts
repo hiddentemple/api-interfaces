@@ -1,7 +1,15 @@
-import {ContactModel} from "./contact.model";
-import {CategorizedDTO, CategorizedModel} from "../core";
+import {WithPrimaryModel} from "../core";
+import {Categorized} from "../core/categorized";
 
-export interface PhoneModel extends CategorizedModel {
-    id: string;
+export enum PhoneCategory {
+    PERSONAL = "Personal",
+    WORK = "Work",
+    FAX = "Fax",
+    OTHER = "Other"
+}
+
+export interface PhoneModel extends WithPrimaryModel, Categorized {
+    id?: string;
     phoneNumber: string;
+    category: PhoneCategory;
 }
