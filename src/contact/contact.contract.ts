@@ -1,4 +1,14 @@
-import {IsAlpha, IsDefined, IsOptional, Length, Matches, Validate, ValidateNested} from "class-validator";
+import {
+    IsAlpha,
+    IsDateString,
+    IsDefined,
+    IsISO8601,
+    IsOptional,
+    Length,
+    Matches,
+    Validate,
+    ValidateNested
+} from "class-validator";
 import {Type} from "class-transformer";
 import {ContactModel} from "./contact.model";
 import {EmailDTO} from "./email.dto";
@@ -6,7 +16,7 @@ import {PhoneDTO} from "./phone.dto";
 import {AddressDTO} from "./address.dto";
 import {WebpageDTO} from "./webpage.dto";
 
-export const NameRegex = /^[a-zA-z-.']+$/
+export const NameRegex = /^[a-zA-z\-. ']+$/
 
 export class AbstractContactRequest {
     @IsDefined()
@@ -16,12 +26,16 @@ export class AbstractContactRequest {
 }
 
 export class AbstractInnerContactRequest {
-    @Matches(NameRegex, {message: "firstName must contain only alphabetic characters and '-'"})
+    @Matches(NameRegex, {
+        message: "firstName must contain only alphabetic characters, spaces, periods, and '-'"
+    })
     @Length(2, 255)
     @IsDefined()
     firstName: string;
 
-    @Matches(NameRegex, {message: "lastName must contain only alphabetic characters and '-'"})
+    @Matches(NameRegex, {
+        message: "lastName must contain only alphabetic characters, spaces, periods, and '-'"
+    })
     @Length(2, 255)
     @IsDefined()
     lastName: string;
@@ -31,28 +45,16 @@ export class AbstractInnerContactRequest {
     nickName?: string;
 
     @IsOptional()
-    @ValidateNested({each: true})
-    @Type(() => EmailDTO)
-    emails?: EmailDTO[];
+    @IsDateString()
+    birthday?: string;
 
     @IsOptional()
-    @ValidateNested({each: true})
-    @Type(() => PhoneDTO)
-    phones?: PhoneDTO[];
-
-    @IsOptional()
-    @ValidateNested({each: true})
-    @Type( () => AddressDTO)
-    addresses?: AddressDTO[];
-
-    @IsOptional()
-    @Length(2, 5)
-    @IsAlpha()
-    countryCode?: string;
+    @IsDateString()
+    anniversary?: string;
 
     @IsOptional()
     @Length(2, 255)
-    relatedName?: string;
+    gender?: string;
 
     @IsOptional()
     @Length(2, 255)
@@ -71,16 +73,22 @@ export class AbstractInnerContactRequest {
     organization?: string;
 
     @IsOptional()
+    @ValidateNested({each: true})
+    @Type(() => EmailDTO)
+    emails?: EmailDTO[];
+
+    @IsOptional()
+    @ValidateNested({each: true})
+    @Type(() => PhoneDTO)
+    phones?: PhoneDTO[];
+
+    @IsOptional()
+    @ValidateNested({each: true})
+    @Type( () => AddressDTO)
+    addresses?: AddressDTO[];
+
+    @IsOptional()
     notes?: string;
-
-    @IsOptional()
-    birthday?: string;
-
-    @IsOptional()
-    anniversary?: string;
-
-    @IsOptional()
-    gender?: string;
 
     @IsOptional()
     @ValidateNested({each: true})
@@ -88,8 +96,8 @@ export class AbstractInnerContactRequest {
     webpages?: WebpageDTO[];
 
     @IsOptional()
+    @Length(2, 255, {each: true})
     tags?: string[];
-
 }
 
 class AbstractContactResponse {
