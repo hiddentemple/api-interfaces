@@ -1,4 +1,3 @@
-import {WithPrimaryModel} from "../core";
 import {Categorized} from "../core/categorized";
 
 export enum WebpageCategory {

@@ -1,4 +1,3 @@
-import {ContactModel} from "./contact.model";
 import {WithPrimaryModel} from "../core";
 import {Categorized} from "../core/categorized";
 

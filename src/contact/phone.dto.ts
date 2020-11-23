@@ -1,6 +1,5 @@
-import {IsDefined, Matches, IsEnum, IsNumberString, IsOptional, IsPhoneNumber, IsUUID, Length} from "class-validator";
+import {IsDefined, IsEnum, Matches} from "class-validator";
 import {WithPrimary} from "../core/with-primary";
-import {Type} from "class-transformer";
 import {PhoneCategory, PhoneModel} from "./phone.model";
 
 export class PhoneDTO extends WithPrimary implements PhoneModel {

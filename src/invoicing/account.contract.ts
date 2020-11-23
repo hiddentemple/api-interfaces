@@ -1,11 +1,9 @@
-import {CustomerModel} from "./customer.model";
 import {InvoiceModel} from "./invoice.model";
 import {PaymentModel} from "./payment.model";
 import {IsAlphanumeric, IsDefined, IsOptional, Length, ValidateNested} from "class-validator";
 import {Type} from "class-transformer";
 import {PaymentDTO} from "./payment.dto";
 import {AccountModel} from "./account.model";
-import {CustomerDTO} from "./customer.dto";
 
 export class AbstractAccountRequest {
     @IsDefined()

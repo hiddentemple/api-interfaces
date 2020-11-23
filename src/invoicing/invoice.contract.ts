@@ -1,17 +1,7 @@
 import {BillerModel} from "./biller.model";
 import {CustomerModel} from "./customer.model";
 import {LineItemModel} from "./line-item.model";
-import {
-    IsBoolean,
-    IsDate,
-    IsDateString,
-    IsDecimal,
-    IsDefined,
-    IsNumber,
-    IsOptional,
-    Length,
-    ValidateNested
-} from "class-validator";
+import {IsBoolean, IsDateString, IsDefined, IsNumber, IsOptional, Length, ValidateNested} from "class-validator";
 import {Type} from "class-transformer";
 import {LineItemDTO} from "./line-item.dto";
 import {CustomerDTO} from "./customer.dto";

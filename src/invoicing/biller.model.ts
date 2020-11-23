@@ -1,4 +1,4 @@
-import {AddressModel, EmailModel, PhoneModel} from "../contact";
+import {AddressModel} from "../contact";
 import {PaymentModel} from "./payment.model";
 
 export interface BillerModel {

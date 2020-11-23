@@ -1,14 +1,4 @@
-import {
-    IsAlpha,
-    IsDateString,
-    IsDefined,
-    IsISO8601,
-    IsOptional,
-    Length,
-    Matches,
-    Validate,
-    ValidateNested
-} from "class-validator";
+import {IsDateString, IsDefined, IsOptional, Length, Matches, ValidateNested} from "class-validator";
 import {Type} from "class-transformer";
 import {ContactModel} from "./contact.model";
 import {EmailDTO} from "./email.dto";

@@ -1,4 +1,3 @@
-import {CustomerModel} from "./customer.model";
 import {InvoiceModel} from "./invoice.model";
 import {PaymentModel} from "./payment.model";
 
