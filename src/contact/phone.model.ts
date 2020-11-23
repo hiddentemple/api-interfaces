@@ -3,8 +3,11 @@ import {Categorized} from "../core/categorized";
 
 export enum PhoneCategory {
     PERSONAL = "Personal",
+    HOME = "Home",
+    MOBILE = "Mobile",
     WORK = "Work",
-    FAX = "Fax",
+    BUSINESS_FAX = "Business Fax",
+    HOME_FAX = "Home Fax",
     OTHER = "Other"
 }
 
