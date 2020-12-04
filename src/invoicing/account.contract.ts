@@ -29,6 +29,10 @@ export class AbstractInnerAccountRequest {
     @IsOptional()
     @Length(2, 255)
     notes?: string;
+
+    @IsDefined()
+    @Length(2, 255)
+    name: string;
 }
 
 class AbstractAccountResponse {

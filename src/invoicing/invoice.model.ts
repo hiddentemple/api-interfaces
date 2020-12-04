@@ -2,9 +2,16 @@ import {CustomerModel} from "./customer.model";
 import {LineItemModel} from "./line-item.model";
 import {BillerModel} from "./biller.model";
 
+export enum InvoiceType {
+    INVOICE = 'Invoice',
+    QUOTE = 'Quote',
+    ESTIMATE = 'Estimate'
+}
+
 export interface InvoiceModel {
     id: string;
     date: string;
+    type: InvoiceType;
     biller: BillerModel;
     invoiceNumber: string;
     technician?: string;

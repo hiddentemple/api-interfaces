@@ -9,9 +9,11 @@ export interface ContactModel {
     firstName: string;
     lastName: string;
     nickName?: string;
+    gender?: string;
+
+    // Expected to be valid ISO Date strings in adherence with class-validator IsDateString()
     anniversary?: string;
     birthday?: string;
-    gender?: string;
 
     jobTitle?: string;
     department?: string;
@@ -24,6 +26,6 @@ export interface ContactModel {
     notes?: string;
     webpages?: WebpageModel[];
     tags?: string[];
-    updatedAt: Date;
-    createdAt: Date;
+    updatedAt?: Date;
+    createdAt?: Date;
 }

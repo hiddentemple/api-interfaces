@@ -1,12 +1,21 @@
 import {BillerModel} from "./biller.model";
 import {CustomerModel} from "./customer.model";
 import {LineItemModel} from "./line-item.model";
-import {IsBoolean, IsDateString, IsDefined, IsNumber, IsOptional, Length, ValidateNested} from "class-validator";
+import {
+    IsBoolean,
+    IsDateString,
+    IsDefined,
+    IsEnum,
+    IsNumber,
+    IsOptional,
+    Length,
+    ValidateNested
+} from "class-validator";
 import {Type} from "class-transformer";
 import {LineItemDTO} from "./line-item.dto";
 import {CustomerDTO} from "./customer.dto";
 import {BillerDTO} from "./biller.dto";
-import {InvoiceModel} from "./invoice.model";
+import {InvoiceModel, InvoiceType} from "./invoice.model";
 
 
 export class AbstractInvoiceRequest {
@@ -26,6 +35,10 @@ export class AbstractInnerInvoiceRequest {
     @ValidateNested()
     @Type(() => BillerDTO)
     biller: BillerModel;
+
+    @IsDefined()
+    @IsEnum(InvoiceType)
+    type: InvoiceType;
 
     @IsDefined()
     @Length(2, 255)
