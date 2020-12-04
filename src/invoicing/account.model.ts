@@ -2,12 +2,12 @@ import {InvoiceModel} from "./invoice.model";
 import {PaymentModel} from "./payment.model";
 
 export interface AccountModel {
-    id: string;
-    acctNumber?: string;
+    id?: string;
     name: string;
-    invoices?: InvoiceModel[];
-    paymentInfo?: PaymentModel;
+    acctNumber?: string;
     notes?: string;
-    createdAt?: Date;
+    paymentInfo?: PaymentModel;
+    invoices?: InvoiceModel[];
     updatedAt?: Date;
+    createdAt?: Date;
 }
