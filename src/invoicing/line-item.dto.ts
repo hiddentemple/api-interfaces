@@ -22,10 +22,6 @@ export class LineItemDTO {
     @IsNumber()
     unitPrice: number;
 
-    @IsDefined()
-    @IsNumber()
-    totalPrice: number;
-
     @IsOptional()
     @Length(2, 255)
     warranty?: string;

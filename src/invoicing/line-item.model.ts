@@ -5,6 +5,5 @@ export interface LineItemModel{
     itemCategory: string;
     description?: string;
     unitPrice: number;
-    totalPrice: number;
     warranty?: string;
 }
